@@ -1,0 +1,13 @@
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\bin\Debug\CitiesAndRoads.Persistence.dll.config
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\bin\Debug\CitiesAndRoads.Persistence.dll
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\bin\Debug\CitiesAndRoads.Persistence.pdb
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\bin\Debug\CitiesAndRoads.DTO.dll
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\bin\Debug\EntityFramework.dll
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\bin\Debug\CitiesAndRoads.DTO.pdb
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\bin\Debug\EntityFramework.xml
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\obj\Debug\CitiesAndRoads.Persistence.csprojAssemblyReference.cache
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\obj\Debug\CitiesAndRoads.Persistence.csproj.CopyComplete
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\obj\Debug\CitiesAndRoads.Persistence.dll
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Persistence\obj\Debug\CitiesAndRoads.Persistence.pdb

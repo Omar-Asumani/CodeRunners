@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CitiesAndRoadsPersistenceStoreContainer" CdmEntityContainer="CitiesAndRoadsDbContext">
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="CitiesAndRoads.Persistence.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="IsLogisticCenter" ColumnName="IsLogisticCenter" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roads">
+      <EntityTypeMapping TypeName="CitiesAndRoads.Persistence.Road">
+        <MappingFragment StoreEntitySet="Road">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="SideCityOneId" ColumnName="SideCityOneId" />
+          <ScalarProperty Name="SideCityTwoId" ColumnName="SideCityTwoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

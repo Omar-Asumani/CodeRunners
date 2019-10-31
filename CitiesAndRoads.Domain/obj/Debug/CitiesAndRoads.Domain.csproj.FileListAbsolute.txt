@@ -1,0 +1,13 @@
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\bin\Debug\CitiesAndRoads.Domain.dll
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\bin\Debug\CitiesAndRoads.Domain.pdb
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\bin\Debug\CitiesAndRoads.DTO.dll
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\bin\Debug\CitiesAndRoads.Persistence.dll
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\bin\Debug\EntityFramework.dll
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\bin\Debug\CitiesAndRoads.DTO.pdb
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\bin\Debug\CitiesAndRoads.Persistence.pdb
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\bin\Debug\CitiesAndRoads.Persistence.dll.config
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\bin\Debug\EntityFramework.xml
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\obj\Debug\CitiesAndRoads.Domain.csprojAssemblyReference.cache
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\obj\Debug\CitiesAndRoads.Domain.csproj.CopyComplete
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\obj\Debug\CitiesAndRoads.Domain.dll
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.Domain\obj\Debug\CitiesAndRoads.Domain.pdb

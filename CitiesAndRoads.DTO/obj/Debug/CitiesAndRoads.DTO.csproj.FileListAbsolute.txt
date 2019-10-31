@@ -1,0 +1,5 @@
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.DTO\bin\Debug\CitiesAndRoads.DTO.dll
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.DTO\bin\Debug\CitiesAndRoads.DTO.pdb
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.DTO\obj\Debug\CitiesAndRoads.DTO.csprojAssemblyReference.cache
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.DTO\obj\Debug\CitiesAndRoads.DTO.dll
+D:\Projects\workspace-VS2019\CodeRunnersChallenge\CitiesAndRoads\CitiesAndRoads.DTO\obj\Debug\CitiesAndRoads.DTO.pdb

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CitiesAndRoads.Persistence.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsLogisticCenter" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Road">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Length" Type="int" Nullable="false" />
+          <Property Name="SideCityOneId" Type="int" Nullable="false" />
+          <Property Name="SideCityTwoId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Road_City1">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Road" Type="Self.Road" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Road">
+              <PropertyRef Name="SideCityOneId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Road_City2">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Road" Type="Self.Road" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Road">
+              <PropertyRef Name="SideCityTwoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CitiesAndRoadsPersistenceStoreContainer">
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Road" EntityType="Self.Road" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Road_City1" Association="Self.FK_Road_City1">
+            <End Role="City" EntitySet="City" />
+            <End Role="Road" EntitySet="Road" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Road_City2" Association="Self.FK_Road_City2">
+            <End Role="City" EntitySet="City" />
+            <End Role="Road" EntitySet="Road" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CitiesAndRoads.Persistence" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsLogisticCenter" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Road">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Length" Type="Int32" Nullable="false" />
+          <Property Name="SideCityOneId" Type="Int32" Nullable="false" />
+          <Property Name="SideCityTwoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SideCityOne" Relationship="Self.FK_Road_City_One" FromRole="Road" ToRole="City" />
+          <NavigationProperty Name="SideCityTwo" Relationship="Self.FK_Road_City_Two" FromRole="Road" ToRole="City" />
+        </EntityType>
+        <Association Name="FK_Road_City_One">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Road" Type="Self.Road" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Road">
+              <PropertyRef Name="SideCityOneId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Road_City_Two">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Road" Type="Self.Road" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Road">
+              <PropertyRef Name="SideCityTwoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CitiesAndRoadsDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cities" EntityType="Self.City" />
+          <EntitySet Name="Roads" EntityType="Self.Road" />
+          <AssociationSet Name="FK_Road_City_One" Association="Self.FK_Road_City_One">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Road" EntitySet="Roads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Road_City_Two" Association="Self.FK_Road_City_Two">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Road" EntitySet="Roads" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CitiesAndRoadsPersistenceStoreContainer" CdmEntityContainer="CitiesAndRoadsDbContext">
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="CitiesAndRoads.Persistence.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="IsLogisticCenter" ColumnName="IsLogisticCenter" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roads">
+            <EntityTypeMapping TypeName="CitiesAndRoads.Persistence.Road">
+              <MappingFragment StoreEntitySet="Road">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Length" ColumnName="Length" />
+                <ScalarProperty Name="SideCityOneId" ColumnName="SideCityOneId" />
+                <ScalarProperty Name="SideCityTwoId" ColumnName="SideCityTwoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

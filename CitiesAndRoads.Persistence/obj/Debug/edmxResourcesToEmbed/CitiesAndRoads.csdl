@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CitiesAndRoads.Persistence" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsLogisticCenter" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Road">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Length" Type="Int32" Nullable="false" />
+    <Property Name="SideCityOneId" Type="Int32" Nullable="false" />
+    <Property Name="SideCityTwoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SideCityOne" Relationship="Self.FK_Road_City_One" FromRole="Road" ToRole="City" />
+    <NavigationProperty Name="SideCityTwo" Relationship="Self.FK_Road_City_Two" FromRole="Road" ToRole="City" />
+  </EntityType>
+  <Association Name="FK_Road_City_One">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Road" Type="Self.Road" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Road">
+        <PropertyRef Name="SideCityOneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Road_City_Two">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Road" Type="Self.Road" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Road">
+        <PropertyRef Name="SideCityTwoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CitiesAndRoadsDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Roads" EntityType="Self.Road" />
+    <AssociationSet Name="FK_Road_City_One" Association="Self.FK_Road_City_One">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Road" EntitySet="Roads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Road_City_Two" Association="Self.FK_Road_City_Two">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Road" EntitySet="Roads" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
